@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=4 uid="uid://dgu2nf25nmmdf"]
+
+[ext_resource type="Texture2D" uid="uid://0cxjkwmh70uk" path="res://New Piskel (1).png" id="1_koqc7"]
+[ext_resource type="Texture2D" uid="uid://rt338r0sltlr" path="res://ze biribinha.png" id="3_2us1m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qir6w"]
+texture = ExtResource("1_koqc7")
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dgptv"]
+sources/0 = SubResource("TileSetAtlasSource_qir6w")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwsvh"]
+radius = 9.0
+height = 50.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-4, 0)
+tile_set = SubResource("TileSet_dgptv")
+collision_animatable = true
+format = 2
+layer_0/tile_data = PackedInt32Array(2031619, 458752, 8, 1966083, 458752, 5, 1966084, 458752, 5, 1966082, 458752, 5, 1966085, 458752, 5, 1966086, 458752, 5, 1966087, 458752, 5, 1966088, 458752, 5, 2031620, 458752, 8, 2031621, 458752, 8, 2031622, 458752, 8, 2031623, 458752, 8, 2031624, 458752, 8, 2031618, 458752, 8, 2031617, 458752, 8, 1966080, 458752, 5, 1966081, 458752, 5, 1900544, 458752, 5)
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAB8AAAAGAAgAAAABAB8AAAAHAAgAAAACAB8AAAAHAAgAAAAJAB4AAAAHAAUAAAAKAB4AAAAHAAUAAAAKAB8AAAAHAAUAAAAJAB8AAAAHAAUAAAABAB0AAAAHAAUAAAACAB0AAAAHAAUAAAADAB0AAAAHAAUAAAAEAB0AAAAHAAUAAAAFAB0AAAAHAAUAAAAGAB0AAAAHAAUAAAAHAB0AAAAHAAUAAAAIAB0AAAAHAAUAAAAJAB0AAAAHAAUAAAAKAB0AAAAHAAUAAAA=")
+tile_set = SubResource("TileSet_dgptv")
+use_kinematic_bodies = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-4, 0)
+
+[node name="Olho do cu" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(67, 440)
+limit_top = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(67, 440)
+texture = ExtResource("3_2us1m")
+hframes = 3
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(62, 439)
+shape = SubResource("CapsuleShape2D_fwsvh")
